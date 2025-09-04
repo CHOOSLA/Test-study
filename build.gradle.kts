@@ -10,6 +10,7 @@ repositories {
 }
 
 dependencies {
+    testImplementation("org.mockito:mockito-junit-jupiter:5.19.0")
     testImplementation("org.assertj:assertj-core:3.27.4")
     testImplementation("org.mockito:mockito-core:5.19.0")
     testImplementation(platform("org.junit:junit-bom:5.10.0"))

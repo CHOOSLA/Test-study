@@ -9,9 +9,11 @@ import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.*;
 
 public class UserServiceTest {
-    /// Mock
-    ///  - 목은 스파이와 비슷하게 호출 검증 등이 가능하다.
-    ///  - 완전히 가짜 객체 UserRepository 인터페이스를 mock()으로 묶어서 주입하낟.
+    ///  Mock
+    // - 목은 스파이와 비슷하게 호출 검증 등이 가능하다.
+    // - 완전히 가짜 객체 UserRepository 인터페이스를 mock()으로 묶어서 주입한다.
+    /// 실무에서 언제 사용할까?
+    /// - 테스트 대상 객체가 의존 객체의 특정 메서드를 정확히 호출하는지, 올바른 인자로 호출하는지 확인할 때
 
     @Test
     void testWithMock() {
@@ -28,7 +30,7 @@ public class UserServiceTest {
 
         // 테스트 1: getUserId 호출
         assertThat(userService.getUserId(1)).isEqualTo("Alice"); // saveUser("Charlie") 1번
-        assertThat(userService.getUserId(1)).isEqualTo(anyString()); // saveUser 총 1번 호출
+        assertThat(userService.getUserId(2)).isEqualTo("Bob"); // saveUser 총 1번 호출
 
         // 테스트 2: getUserCount 호출
         assertThat(userService.getUserCount()).isEqualTo(1); // 모크 반환값

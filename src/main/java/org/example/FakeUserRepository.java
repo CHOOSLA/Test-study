@@ -15,7 +15,7 @@ public class FakeUserRepository implements UserRepository{
 
     @Override
     public void saveUser(String user) {
-        fakeDb.put(nextId++, user)
+        fakeDb.put(nextId++, user);
     }
 
     @Override

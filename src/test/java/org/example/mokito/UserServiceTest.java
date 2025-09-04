@@ -5,11 +5,15 @@ import org.example.MySQLUserRepository;
 import org.example.UserRepository;
 import org.example.UserService;
 import org.junit.jupiter.api.Test;
+import org.mockito.Spy;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.*;
 
 public class UserServiceTest {
+
+    @Spy
+    UserRepository spyRepo = new MySQLUserRepository();
 
     ///* spy
     ///* - 스파이는 실제 객체를 감싼다 ex> spy(MySqlRepository()), spy(RealRepository())
