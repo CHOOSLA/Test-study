@@ -18,7 +18,7 @@ public class Debug {
     }
 
     private static int extractNumber(String s) {
-        return Integer.parseInt(s.split(" ")[0]);
+        return Integer.parseInt(s.split(" ")[1]);
     }
 
     private static void checkInput(String[] input) {
