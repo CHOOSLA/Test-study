@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.example.integratedTest.UserServiceUnitTest" tests="4" skipped="0" failures="1" errors="0" timestamp="2025-09-04T08:16:36.172Z" hostname="choosla-macbookpro" time="0.411">
+  <properties/>
+  <testcase name="Spy Test: 실제 객체의 동작을 유지하며 일부만 Stubbing" classname="org.example.integratedTest.UserServiceUnitTest" time="0.375">
+    <failure message="org.mockito.exceptions.misusing.PotentialStubbingProblem: &#10;Strict stubbing argument mismatch. Please check:&#10; - this invocation of 'findUserId' method:&#10;    spyRepository.findUserId(1);&#10;    -&gt; at org.example.UserService.getUserId(UserService.java:11)&#10; - has following stubbing(s) with different arguments:&#10;    1. spyRepository.findUserId(2);&#10;      -&gt; at org.example.integratedTest.UserServiceUnitTest.spyTest(UserServiceUnitTest.java:114)&#10;Typically, stubbing argument mismatch indicates user mistake when writing tests.&#10;Mockito fails early so that you can debug potential problem easily.&#10;However, there are legit scenarios when this exception generates false negative signal:&#10;  - stubbing the same method multiple times using 'given().will()' or 'when().then()' API&#10;    Please use 'will().given()' or 'doReturn().when()' API for stubbing.&#10;  - stubbed method is intentionally invoked with different arguments by code under test&#10;    Please use default or 'silent' JUnit Rule (equivalent of Strictness.LENIENT).&#10;For more information see javadoc for PotentialStubbingProblem class." type="org.mockito.exceptions.misusing.PotentialStubbingProblem">org.mockito.exceptions.misusing.PotentialStubbingProblem: 
+Strict stubbing argument mismatch. Please check:
+ - this invocation of 'findUserId' method:
+    spyRepository.findUserId(1);
+    -&gt; at org.example.UserService.getUserId(UserService.java:11)
+ - has following stubbing(s) with different arguments:
+    1. spyRepository.findUserId(2);
+      -&gt; at org.example.integratedTest.UserServiceUnitTest.spyTest(UserServiceUnitTest.java:114)
+Typically, stubbing argument mismatch indicates user mistake when writing tests.
+Mockito fails early so that you can debug potential problem easily.
+However, there are legit scenarios when this exception generates false negative signal:
+  - stubbing the same method multiple times using 'given().will()' or 'when().then()' API
+    Please use 'will().given()' or 'doReturn().when()' API for stubbing.
+  - stubbed method is intentionally invoked with different arguments by code under test
+    Please use default or 'silent' JUnit Rule (equivalent of Strictness.LENIENT).
+For more information see javadoc for PotentialStubbingProblem class.
+	at app//org.example.UserService.getUserId(UserService.java:11)
+	at app//org.example.integratedTest.UserServiceUnitTest.spyTest(UserServiceUnitTest.java:118)
+	at java.base@17.0.16/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base@17.0.16/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base@17.0.16/java.util.ArrayList.forEach(ArrayList.java:1511)
+</failure>
+  </testcase>
+  <testcase name="Dummy Test: 의존 객체를 사용하지 않는 메소드 테스트" classname="org.example.integratedTest.UserServiceUnitTest" time="0.026"/>
+  <testcase name="Mock Test: 의존 객체의 행위를 검증" classname="org.example.integratedTest.UserServiceUnitTest" time="0.004"/>
+  <testcase name="Stub Test: 의존 객체의 특정 행동을 미리 정의하여 테스트" classname="org.example.integratedTest.UserServiceUnitTest" time="0.004"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
