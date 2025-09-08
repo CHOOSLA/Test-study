@@ -6,15 +6,15 @@ public class GradeService {
         for (int s : scores) {
             sum += s;
         }
-        return sum / scores.length;
+        return sum / (double)scores.length;
     }
 
     public static String getGrade(double avg) {
-        if (avg > 90) {
+        if (avg >= 90) {
             return "A";
-        } else if (avg > 80) {
+        } else if (avg >= 80) {
             return "B";
-        } else if (avg > 70) {
+        } else if (avg >= 70) {
             return "C";
         } else {
             return "D";

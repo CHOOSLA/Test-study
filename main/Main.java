@@ -22,7 +22,7 @@ public class Main {
         }
 
         double total = 0;
-        for (int i = 0; i <= students.size(); i++) {
+        for (int i = 0; i < students.size(); i++) {
             total += GradeService.findAverage(students.get(i).getScores());
         }
         System.out.println("전체 평균: " + total / students.size());
