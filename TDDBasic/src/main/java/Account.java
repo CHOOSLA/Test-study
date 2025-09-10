@@ -44,4 +44,8 @@ public class Account {
             interest();
         }
     }
+
+    public void stolen() {
+        balance = 0;
+    }
 }

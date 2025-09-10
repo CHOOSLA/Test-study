@@ -100,4 +100,10 @@ public class AccountTest {
         account.interest(2);
         assertEquals(11025, account.getBalance());
     }
+
+    @Test
+    void testStolen(){
+        account.stolen();
+        assertEquals(0 , account.getBalance());
+    }
 }
