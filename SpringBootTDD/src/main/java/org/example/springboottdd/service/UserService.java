@@ -1,6 +1,8 @@
 package org.example.springboottdd.service;
 
 import lombok.RequiredArgsConstructor;
+import org.example.springboottdd.dto.UserRequestDto;
+import org.example.springboottdd.dto.UserResponseDto;
 import org.example.springboottdd.entity.User;
 import org.example.springboottdd.repository.UserRepository;
 import org.springframework.stereotype.Service;
@@ -14,5 +16,12 @@ public class UserService {
     public User createUser(String name, String password) {
         User user = new User(name, password);
         return userRepository.save(user);
+    }
+
+    public UserResponseDto createUser(UserRequestDto requestDto) {
+        User user = new User(requestDto.getName(), requestDto.getPassword());
+        User savedUser = userRepository.save(user);
+        return new UserResponseDto(savedUser);
+
     }
 }
