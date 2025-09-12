@@ -7,30 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		842F25292E73E63200E00FF0 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 842F25282E73E63200E00FF0 /* Alamofire */; };
-		842F252B2E73E63200E00FF0 /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 842F252A2E73E63200E00FF0 /* AlamofireDynamic */; };
+		84DCF0BF2E73F9C00045C093 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 84DCF0BE2E73F9C00045C093 /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		842F25192E73E31700E00FF0 /* VoteListRestApi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoteListRestApi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		842F252D2E73E64F00E00FF0 /* Exceptions for "VoteListRestApi" folder in "VoteListRestApi" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = 842F25182E73E31700E00FF0 /* VoteListRestApi */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		842F251B2E73E31700E00FF0 /* VoteListRestApi */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				842F252D2E73E64F00E00FF0 /* Exceptions for "VoteListRestApi" folder in "VoteListRestApi" target */,
-			);
 			path = VoteListRestApi;
 			sourceTree = "<group>";
 		};
@@ -41,8 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				842F25292E73E63200E00FF0 /* Alamofire in Frameworks */,
-				842F252B2E73E63200E00FF0 /* AlamofireDynamic in Frameworks */,
+				84DCF0BF2E73F9C00045C093 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,8 +70,7 @@
 			);
 			name = VoteListRestApi;
 			packageProductDependencies = (
-				842F25282E73E63200E00FF0 /* Alamofire */,
-				842F252A2E73E63200E00FF0 /* AlamofireDynamic */,
+				84DCF0BE2E73F9C00045C093 /* Alamofire */,
 			);
 			productName = VoteListRestApi;
 			productReference = 842F25192E73E31700E00FF0 /* VoteListRestApi.app */;
@@ -117,7 +101,7 @@
 			mainGroup = 842F25102E73E31700E00FF0;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				842F25272E73E63200E00FF0 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				84DCF0BD2E73F9C00045C093 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 842F251A2E73E31700E00FF0 /* Products */;
@@ -281,7 +265,8 @@
 				DEVELOPMENT_TEAM = B647XZ9AYA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = VoteListRestApi/Info.plist;
+				INFOPLIST_FILE = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -310,7 +295,8 @@
 				DEVELOPMENT_TEAM = B647XZ9AYA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = VoteListRestApi/Info.plist;
+				INFOPLIST_FILE = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -353,7 +339,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		842F25272E73E63200E00FF0 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		84DCF0BD2E73F9C00045C093 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
 			requirement = {
@@ -364,15 +350,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		842F25282E73E63200E00FF0 /* Alamofire */ = {
+		84DCF0BE2E73F9C00045C093 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 842F25272E73E63200E00FF0 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			package = 84DCF0BD2E73F9C00045C093 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
-		};
-		842F252A2E73E63200E00FF0 /* AlamofireDynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 842F25272E73E63200E00FF0 /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = AlamofireDynamic;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

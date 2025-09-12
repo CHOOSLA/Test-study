@@ -7,8 +7,8 @@
 
 import Foundation
 
-class Vote{
-  var id: Int?
-  var title: String
-  var description: String
+class Vote : Codable, Identifiable{
+  let id: Int
+  let title: String
+  let description: String
 }
