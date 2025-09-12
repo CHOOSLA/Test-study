@@ -29,6 +29,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -37,6 +38,8 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import coil.compose.rememberAsyncImagePainter
 import com.example.voterestapiandroid.ui.theme.VoteRestApiAndroidTheme
+import java.io.File
+import java.io.FileOutputStream
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -151,14 +154,31 @@ fun CreateVote(
     viewModel: VoteViewModel,
     onNavigateBack: () -> Unit
 ){
+    var context = LocalContext.current
+
     var title by remember { mutableStateOf("") }
     var description by remember { mutableStateOf("") }
     var imageUri by remember { mutableStateOf<Uri?>(null) }
+    var imageFile by remember { mutableStateOf<File?>(null) }
 
     var launcher = rememberLauncherForActivityResult(
         contract = ActivityResultContracts.GetContent(),
         onResult = { uri: Uri? ->
-            imageUri = uri
+            uri?.let {
+                imageUri = it
+                // URI를 파일로 변환
+                val inputStream = context.contentResolver.openInputStream(uri)
+                val file = File(context.cacheDir,
+                    "image_${System.currentTimeMillis()}.jpg")
+                inputStream?.use{ input ->
+                    FileOutputStream(file).use { output ->
+                        input.copyTo(output)
+                    }
+
+                    imageFile = file
+                }
+
+            }
         }
     )
 
@@ -178,7 +198,7 @@ fun CreateVote(
         )
 
         Button(
-            onClick = {},
+            onClick = { launcher.launch("image/*")},
             modifier = Modifier.fillMaxWidth()
         ){
             Text("앨범 사진 선택")
@@ -196,7 +216,8 @@ fun CreateVote(
 
         Button(
             onClick = {
-                viewModel.createVote(title,description)
+//                viewModel.createVote(title,description)
+                viewModel.createVote(title,description, imageFile)
                 onNavigateBack()
             },
             modifier = Modifier.fillMaxWidth()

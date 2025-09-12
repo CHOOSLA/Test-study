@@ -46,13 +46,13 @@ public class VoteController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
-    @PostMapping
-    public ResponseEntity<Vote> createVote(@RequestBody Vote vote) {
-        Vote savedVote = voteRepository.save(vote);
-        return ResponseEntity.ok(savedVote);
-    }
+//    @PostMapping
+//    public ResponseEntity<Vote> createVote(@RequestBody Vote vote) {
+//        Vote savedVote = voteRepository.save(vote);
+//        return ResponseEntity.ok(savedVote);
+//    }
 
-    /*@PostMapping(consumes = {"multipart/form-data"})
+    @PostMapping(consumes = {"multipart/form-data"})
     public ResponseEntity<Vote> createVote(
             @RequestPart("vote") Vote vote,
             @RequestPart(value = "image", required = false) MultipartFile image) throws IOException {
@@ -67,7 +67,7 @@ public class VoteController {
         }
         Vote savedVote = voteRepository.save(vote);
         return ResponseEntity.ok(savedVote);
-    }*/
+    }
 
     @PutMapping("/{id}")
     public ResponseEntity<Vote> updateVote(@PathVariable Long id, @RequestBody Vote vote) {
