@@ -57,7 +57,7 @@ class NetworkManager{
         }
         
         if let image = image, let data = image.jpegData(compressionQuality: 0.8){
-          multipart.append(data, withName: "image", fileName: "image.jpg", mimeType: "image/jpeg")
+          multipart.append(data, withName: "image", fileName: "vote.jpg", mimeType: "image/jpeg")
         }
       },
       to: url,

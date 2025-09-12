@@ -87,7 +87,7 @@ struct AddVoteView: View {
       ){
         Text("앨범에서 선택")
       }
-      .onChange(of: selectedItem) { item in
+      .onChange(of: selectedItem) { _, item in
         Task{
           if let data = try? await item?.loadTransferable(type: Data.self),
               let uiImage = UIImage(data: data){
